@@ -1,76 +1,38 @@
-[![Deploy to Cyclic](https://deploy.cyclic.app/button.svg)](https://deploy.cyclic.app/)
+# HCI Assistant #project #infoiasi #wade #web
 
-# Getting Started with Create React App
+The deliverables of this project can be found below:
+- [Design of the application](Diagrams/)
+- [Scholarly HTML technical report](https://github.com/andreiprepelita/HCI-Assistant/tree/main/Scholarly%20HTML/Technical%20Report#:~:text=/-,Technical%20Report/,-Go%20to%20file)
+- [Open API Specification](https://app.swaggerhub.com/apis/ANDREIPREP999_1/HCI_Template/1.0.0)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+ 
+ Project progress
 
-Runs the app in the production mode.
+Week 6(31st of October-6th of November)
 
-### `npm dev`
+-Establishing the high-level structure and flow of the APIs. (together)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-Discussing about Topic, Database structure and Diagram structure. (together)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Week 7(7th of November-13th of November)
 
-### `npm test`
+-UML Diagrams. (Panagiotis)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-Use-case Diagrams. (Andrei)
 
-### `npm run build`
+-Describe the C4 diagrams. (Panagiotis)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Week 8(14th of November-20th of November)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-OpenAPI specification. (Andrei)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-ScholarlyHTML introduction, proposed solution, architecture sections. (Andrei)
 
-### `npm run eject`
+Week 9(21st of November-27th of November)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-Finalisation of the ScholarlyHTML document from this point. (Panagiotis)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-Finalisation of the OpenAPI Specification from this point. (Andrei)
