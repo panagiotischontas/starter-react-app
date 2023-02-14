@@ -105,6 +105,7 @@ const PinchSpreadEmulationContent = ({ setPinchSpreadDisabled }) => {
     return (
         <div className='imageContainer pt3 pb3 relative overflow-hidden h-100' >
             <img
+                itemProp='image'
                 src={images[index]}
                 alt="error"
                 className='h-100'

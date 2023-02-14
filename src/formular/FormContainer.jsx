@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../styles/Form.css';
 import { AgeAction, AgeContent } from "./questions/Age";
 import { GenderAction, GenderContent } from "./questions/Gender";
@@ -30,6 +30,7 @@ import { EasierDoubleTapOrPinchSpreadAction, EasierDoubleTapOrPinchSpreadContent
 import { ThanksAction, ThanksContent } from "./questions/Thanks";
 import { BestExperienceAction, BestExperienceContent } from "./questions/BestExoperience";
 import { CountryAction, CountryContent } from "./questions/Country";
+import axios from "axios";
 
 const FormContainer = () => {
     const [ count, setCount ] = useState(1);
@@ -78,6 +79,7 @@ const FormContainer = () => {
     const [ doubleTapBestExperience, setDoubleTapBestExperience ] = useState();
     const [ pinchSpreadBestExperience, setPinchSpreadBestExperience ] = useState();
     const [ country, setCountry ] = useState();
+    const [ length, setLength ] = useState();
 
     const data = {
         birthday: birthday,
@@ -513,14 +515,35 @@ const FormContainer = () => {
         }
     }
 
+    useEffect(() => {
+        getResultsLength();
+    }, [])
+    
+
+    const getResultsLength = async () => {
+        const response = await axios(
+            'https://assistant-hci-api.cyclic.app/responses',
+            {
+                method: 'get',
+                data: data,
+            },
+        );
+        setLength(await response.data.length);
+    }
+
     return  (
         <div className="formContainer flex flex-column justify-between items-center" itemScope itemType="https://schema.org/Question" >
             <div className={`header ${[14, 19, 26, 31].includes(count) ? 'mt1' : 'mt5'} pl1 pr1 flex flex-column items-center justify-center`}>
-                <div typ>{count < questions.length - 1 ? `Question #${count}` : 'Thank you!'}</div>
+                <div>{count < questions.length - 1 ? `Question #${count}` : 'Thank you!'}</div>
                 <div className="question" itemProp="name">{questions[count]}</div>
             </div>
             {renderContent(count)}
             {renderAction(count)}
+            <span style={{ display: 'none' }} itemProp="author">Panagiotis Chontas</span>
+            <span style={{ display: 'none' }} itemProp="inLanguage">English</span>
+            <span style={{ display: 'none' }} itemProp="audience">Users</span>
+            <span style={{ display: 'none' }} itemProp="eduQuestionType">Multiple choice</span>
+            <span style={{ display: 'none' }} itemProp="answerCount">{length}</span>
         </div>
     );
 };
