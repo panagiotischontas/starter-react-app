@@ -237,40 +237,40 @@ const Dashboard = () => {
             <div className='dashboardContent flex justify-between'>
                 <div className="filterContainer h-100 w-30 overflow-y-scroll">
                     <div className='filterList h-100 flex flex-column pl4 pr4'>
-                        <div className='age'>
+                        <div className='age' itemScope itemType='https://schema.org/Question'>
                             <Age setResults={setResults} />
                         </div>
-                        <div className='gender'>
+                        <div className='gender' itemScope itemType='https://schema.org/Question'>
                             <Gender setResults={setResults} />
                         </div>
-                        <div className='country'>
+                        <div className='country' itemScope itemType='https://schema.org/Question'>
                             <Country setResults={setResults} />
                         </div>
-                        <div className='education'>
+                        <div className='education' itemScope itemType='https://schema.org/Question'>
                             <Education setResults={setResults} />
                         </div>
-                        <div className='usingSmartDevices'>
+                        <div className='usingSmartDevices' itemScope itemType='https://schema.org/Question'>
                             <UsingSmartDevices setResults={setResults} />
                         </div>
-                        <div className='activity'>
+                        <div className='activity' itemScope itemType='https://schema.org/Question'>
                             <Activity setResults={setResults} />
                         </div>
-                        <div className='workIndustry'>
+                        <div className='workIndustry' itemScope itemType='https://schema.org/Question'>
                             <WorkIndustry setResults={setResults} />
                         </div>
-                        <div className='ownedDevices'>
+                        <div className='ownedDevices' itemScope itemType='https://schema.org/Question'>
                             <OwnedDevices setResults={setResults} />
                         </div>
-                        <div className='reasons'>
+                        <div className='reasons' itemScope itemType='https://schema.org/Question'>
                             <Reasons setResults={setResults} />
                         </div>
-                        <div className='monthlyAmount'>
+                        <div className='monthlyAmount' itemScope itemType='https://schema.org/Question'>
                             <MonthlyAmount setResults={setResults} />
                         </div>
-                        <div className='monetization'>
+                        <div className='monetization' itemScope itemType='https://schema.org/Question'>
                             <Monetization setResults={setResults} />
                         </div>
-                        <div className='monetizationLevel'>
+                        <div className='monetizationLevel' itemScope itemType='https://schema.org/Question'>
                             <MonetizationLevel setResults={setResults} />
                         </div>
                     </div>

@@ -28,7 +28,7 @@ const MonthlyAmount = ({ setResults }) => {
 
     return (
         <div className='filter flex flex-column'>
-            <span>Salary levels(NET)</span>
+            <span itemProp='name'>Salary levels(NET)</span>
             <Checkbox
                 label='0-500 ron'
                 onChange={(e, { checked }) => {

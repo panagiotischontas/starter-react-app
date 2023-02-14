@@ -38,7 +38,7 @@ const Age = ({ setResults }) => {
 
     return (
         <div className='filter flex flex-column pt4'>
-            <span>Age</span>
+            <span itemProp='name'>Age</span>
             <div className='ageMin'>
                 <span>min:</span>
                 <Input type='number' onChange={ageMinHandler} />

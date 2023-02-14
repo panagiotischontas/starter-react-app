@@ -38,7 +38,7 @@ const UsingSmartDevices = ({ setResults }) => {
 
     return (
         <div className='filter flex flex-column'>
-            <span>Experience with smart devices:</span>
+            <span itemProp='name'>Experience with smart devices:</span>
             <div className='ageMin'>
                 <span>min:</span>
                 <Input type='number' onChange={usingSmartDevicesageMinHandler} />

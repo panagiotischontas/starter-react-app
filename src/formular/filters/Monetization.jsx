@@ -26,7 +26,7 @@ const Monetization = ({ setResults }) => {
 
     return (
         <div className='filter flex flex-column'>
-            <span>Monetization</span>
+            <span itemProp='name'>Monetization</span>
             <Checkbox
                 label='yes'
                 onChange={(e, { checked }) => {

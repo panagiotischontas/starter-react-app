@@ -514,10 +514,10 @@ const FormContainer = () => {
     }
 
     return  (
-        <div className="formContainer flex flex-column justify-between items-center">
+        <div className="formContainer flex flex-column justify-between items-center" itemScope itemType="https://schema.org/Question" >
             <div className={`header ${[14, 19, 26, 31].includes(count) ? 'mt1' : 'mt5'} pl1 pr1 flex flex-column items-center justify-center`}>
-                <div>{count < questions.length - 1 ? `Question #${count}` : 'Thank you!'}</div>
-                <div className="question">{questions[count]}</div>
+                <div typ>{count < questions.length - 1 ? `Question #${count}` : 'Thank you!'}</div>
+                <div className="question" itemProp="name">{questions[count]}</div>
             </div>
             {renderContent(count)}
             {renderAction(count)}

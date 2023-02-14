@@ -23,7 +23,7 @@ const Activity = ({ setResults }) => {
 
     return (
         <div className='filter flex flex-column'>
-            <span>Activity</span>
+            <span itemProp='name'>Activity</span>
             <Checkbox
                 label='studying'
                 onChange={(e, { checked }) => {

@@ -23,7 +23,7 @@ const Gender = ({ setResults }) => {
 
     return (
         <div className='filter flex flex-column'>
-            <span>Gender</span>
+            <span itemProp='name'>Gender</span>
             <Checkbox
                 label='male'
                 onChange={(e, { checked }) => {

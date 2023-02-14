@@ -46,7 +46,7 @@ const WorkIndustry = ({ setResults }) => {
 
     return (
         <div className='filter flex flex-column'>
-            <span>Working area</span>
+            <span itemProp='name'>Working area</span>
             <Checkbox
                 label='art'
                 onChange={(e, { checked }) => {

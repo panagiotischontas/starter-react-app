@@ -30,7 +30,7 @@ const Reasons = ({ setResults }) => {
 
     return (
         <div className='filter flex flex-column'>
-            <span>Types of apps</span>
+            <span itemProp='name'>Types of apps</span>
             <Checkbox
                 label='entertainment'
                 onChange={(e, { checked }) => {

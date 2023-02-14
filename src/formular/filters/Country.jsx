@@ -47,7 +47,7 @@ const Country = ({ setResults }) => {
 
     return (
         <div className='filter flex flex-column pt4'>
-            <span>Country</span>
+            <span itemProp='name'>Country</span>
             <Dropdown
                 options={countries}
                 placeholder="country..."

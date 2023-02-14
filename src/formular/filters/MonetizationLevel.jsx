@@ -29,7 +29,7 @@ const MonetizationLevel = ({ setResults }) => {
 
     return (
         <div className='filter flex flex-column pb4'>
-            <span>Monetization level</span>
+            <span itemProp='name'>Monetization level</span>
             <Checkbox
                 label='0-5 ron'
                 onChange={(e, { checked }) => {

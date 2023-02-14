@@ -23,7 +23,7 @@ const OwnedDevices = ({ setResults }) => {
 
     return (
         <div className='filter flex flex-column'>
-            <span>Devices</span>
+            <span itemProp='name'>Devices</span>
             <Checkbox
                 label='smartphone'
                 onChange={(e, { checked }) => {
