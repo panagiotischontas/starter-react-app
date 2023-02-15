@@ -1,0 +1,126 @@
+{
+    "data": [
+      {
+        "activity": {
+          "retired": false,
+          "studying": false,
+          "unemployed": true,
+          "working": false
+        },
+        "deviceMostTimeSpent": {
+          "smartband": 3,
+          "smartphone": 2,
+          "smartwatch": 1,
+          "tablet": 4
+        },
+        "ownedDevices": {
+          "smartband": false,
+          "smartphone": true,
+          "smartwatch": false,
+          "tablet": false
+        },
+        "reasons": {
+          "communication": true,
+          "entertainment": false,
+          "health": false,
+          "information": false,
+          "organising": false,
+          "reading": false
+        },
+        "swipeData": {
+          "timeAfterHint": -1,
+          "timeUntilAction": 1,
+          "totalTime": 7
+        },
+        "scrollData": {
+          "timeAfterHint": -1,
+          "timeUntilAction": 2,
+          "totalTime": 3
+        },
+        "pinchSpreadData": {
+          "timeAfterHint": -1,
+          "timeUntilAction": 1,
+          "totalTime": 2
+        },
+        "doubleTapData": {
+          "timeAfterHint": -1,
+          "timeUntilAction": 1,
+          "totalTime": 2
+        },
+        "_id": "63ec8af1485e46f3a2fadc4e",
+        "age": 19,
+        "doubleTapExperienceFeeling": "interested",
+        "doubleTapNavigate": 5,
+        "doubleTapRateExperience": 5,
+        "easierDoubleTapOrPinchSpread": "doubleTap",
+        "easierSwipeOrScroll": "swipe",
+        "education": "middleSchool",
+        "gender": "male",
+        "likeDoubleTapOrPinchSpread": "doubleTap",
+        "likeSwipeOrScroll": "swipe",
+        "monthlyAmount": "1701-2500",
+        "pinchSpreadExperienceFeeling": "interested",
+        "pinchSpreadRateExperience": 4,
+        "scrollExperienceFeeling": "interested",
+        "scrollNavigate": 3,
+        "scrollRateExperience": 3,
+        "subscription": "yes",
+        "subscriptionAmount": "16-35",
+        "swipeExperienceFeeling": "interested",
+        "swipeNavigate": 4,
+        "swipeOrScroll": "swipe",
+        "swipeRateExperience": 4,
+        "timeSpent": 10,
+        "usingSmartDevices": 9,
+        "workIndustry": "entertainment",
+        "zoom": "doubleTap",
+        "zoomEffective": 4,
+        "swipeBestExperience": "phone",
+        "scrollBestExperience": "phone",
+        "doubleTapBestExperience": "phone",
+        "pinchSpreadBestExperience": "phone",
+        "birthday": "2003-05-09T06:32:35.000Z",
+        "country": "RO",
+        "__v": 0
+      }
+    ],
+    "status": 200,
+    "statusText": "",
+    "headers": {
+      "content-length": "1608",
+      "content-type": "application/json; charset=utf-8"
+    },
+    "config": {
+      "transitional": {
+        "silentJSONParsing": true,
+        "forcedJSONParsing": true,
+        "clarifyTimeoutError": false
+      },
+      "adapter": [
+        "xhr",
+        "http"
+      ],
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1,
+      "maxBodyLength": -1,
+      "env": {},
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "method": "get",
+      "params": {
+        "ageMin": 15,
+        "ageMax": 20
+      },
+      "url": "https://assistant-hci-api.cyclic.app/find/age"
+    },
+    "request": {}
+  }

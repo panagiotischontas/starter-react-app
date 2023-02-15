@@ -29,6 +29,7 @@ const Age = ({ setResults }) => {
                         params: { ageMin: ageMin, ageMax: ageMax },
                     },
                 );
+                console.log(JSON.stringify(response, null, 2));
                 setResults(await response.data)
             }
         } else {

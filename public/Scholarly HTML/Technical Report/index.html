@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>HCI Assistant - Technical Report</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+  </head>
+  <body prefix="schema: http://schema.org, sa: https://ns.science.ai">
+    <header>
+      <h1>HCI Assistant - Technical Report</h1>
+    </header>
+    <div role="contentinfo">
+      <section typeof="sa:AuthorsList">
+        <h2>Authors</h2>
+        <ul>
+          <li typeof="sa:ContributorRole" property="schema:author">
+            <span typeof="schema:Person" resource="https://github.com/panagiotischontas">
+              <meta property="schema:givenName" content="Panagiotis-Efstratios">
+              <meta property="schema:familyName" content="Chontas">
+              <a href="https://github.com/panagiotischontas">
+                <span property="schema:name">Panagiotis-Efstratios Chontas</span>
+              </a>
+            </span>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Abstract</h2>
+      <p>
+        This technical report presents the preliminary considerations for the HCI Assistant
+        project that will be done for the <span typeof="schema:Course" resource="https://profs.info.uaic.ro/~busaco/teach/courses/wade/"><a href="https://profs.info.uaic.ro/~busaco/teach/courses/wade/"> 
+          <span property="schema:name">Web Application Development</span></a></span>. The project will consist of a Web application that will provide a HCI oriented survey that is going help the understanding the way users inetract with diferent apps 
+		  depending on their gestures and interactions. This way an admin (researcher/academic/PO/PM) can get some helpful insights about what the users like and how they interact with the product. 
+		  Based on the results of the survey anyone that would like to create an app for a specific type of users will need just to filter their need in the app and they will find what that specific category of users 
+		  like on an app. All the above will also inform the general reaction to different types of gestures and how different types of users understand them and interact with them.
+      </p>
+    </section>	
+	
+	
+    <section id="use-introduction" role="doc-introduction">
+      <h2>Introduction</h2>
+      <p>
+        The application will be developed using the REST paradigm, and the communication between the client (the front-end of the
+        application) and the server (the back-end application) will be done through a REST API. This architectural decission was taken 
+        because the REST paradigm "enforces the separation of concerns and helps the client and the server components evolve
+        independently" (<span typeof="schema:WebSite" resource="https://restfulapi.net/"><a role="doc-biblioref" href="https://restfulapi.net/"><span property="schema:name">REST API</span></a></span>), which is a general
+        development good practice that is aldso helping the project being more organised and simple to understand and follow.
+      </p>
+    </section>
+
+    <section id="architecture">
+      <h2>Architecture</h2>
+      <p>
+        The application’s architecture is based on SOA (Service Oriented Architecture). There exists a collection of independent services that perform the application's business logic. All layers of the application (UI, business logic, and data) are deployed or hosted through the means of AWS cloud vendor or some other means:
+      </p>
+      <ul>
+        <li>Both the UI and API are hosted via Cyclic.</li>
+        <li>The data is stored in a MongoDB database.</li>
+      </ul>
+      <h3>Flow</h3>
+      <ul>
+        <li>
+          <p>The application’s flow is a pretty classical one for a form and a dashboard:</p>
+          <ul>
+            <li>User accesses the application, the form, from a tablet’s web browser and from there he completes the entire flow of the questions</li>
+            <li>Another user, the researcher, opens the application, the dashboard, from a desktop’s web browser and filters the data that are going to help him find the right conclusions on the HCI matter</li>
+          </ul>
+          <img src="../../images/tech/image4.png" style="width: 75%;"/>
+        </li>
+      </ul>
+
+      <h3>UI Layer</h3>
+      <p>Along the client-side development process, the following three objectives need to be attained:</p>
+      <ul>
+        <li>Obtaining a domain name for the UI application;</li>
+        <li>Using a CI/CD pipeline for the client application for development efficiency;</li>
+        <li>The UI application will be hosted in the same way as the wiki for the application (this website).</li>
+      </ul>
+      <p>Cyclic was favored over other services because it provided all of these three aspects free, both time-wise and financially:</p>
+      <ul>
+        <li>The client-side application has an associated domain name;</li>
+        <li>There is a CI/CD pipeline that automatically deploys the client application each time a commit is made to the GitHub repository hosting the client-side code;</li>
+        <li>The client-side application and the wiki of the project are hosted using the same service. This removes the need of learning different technologies specifically for the UI.</li>
+      </ul>
+
+      <h3>Backend Services</h3>
+      <p>The Backend of the application is split into separate services, described in the following diagram:</p>
+      <img src="../../images/tech/image3.png" style="width: 75%;"/>
+      <p>The client-side development process has the following three objectives:</p>
+      <ul>
+        <li>A domain name for the API application;</li>
+        <li>To use a CI/CD pipeline for the client application for development efficiency;</li>
+      </ul>
+      <p>Cyclic was favored over other services because it provided all of these three aspects free, both time-wise and financially:</p>
+      <ul>
+        <li>The API  application has an associated domain name;</li>
+        <li>There is a CI/CD pipeline that automatically deploys the client application each time a commit is made to the GitHub repository hosting the client-side code;</li>
+      </ul>
+      <h3>API (/save)</h3>
+      <p>This endpoint is called when the user finishes all the questions from the form.</p>
+      <p>The following informations are the ones that are saved when the database is queried:</p>
+      <ul>
+        <li>Age</li>
+        <li>Gender</li>
+        <li>Educational level</li>
+        <li>Experience with smart devices</li>
+        <li>Activity</li>
+        <li>Owned devices</li>
+        <li>Time spent on smart devices</li>
+        <li>Field of work</li>
+        <li>Reasons of using smart devices</li>
+        <li>Preferred device size</li>
+        <li>Daily amount of time on smart devices</li>
+        <li>Salary amount</li>
+        <li>Subscription money amount </li>
+        <li>Data about interaction with the app</li>
+
+      </ul>
+
+      <h3>API (/find)</h3>
+      <p>This endpoint is called when the user wants to collect the filtered data of the survey.</p>
+      <p>The following informations are the ones that are collected when the database is queried:</p>
+      <ul>
+        <li>Age</li>
+        <li>Gender</li>
+        <li>Educational level</li>
+        <li>Experience with smart devices</li>
+        <li>Activity</li>
+        <li>Owned devices</li>
+        <li>Time spent on smart devices</li>
+        <li>Field of work</li>
+        <li>Reasons of using smart devices</li>
+        <li>Preferred device size</li>
+        <li>Daily amount of time on smart devices</li>
+        <li>Salary amount</li>
+        <li>Subscription money amount </li>
+        <li>Data about interaction with the app</li>
+      </ul>
+    </section>
+
+    <section id="spec">
+      <h2>Functional and Technical Specifications</h2>
+      <h3>Functional Specifications</h3>
+      <ul>
+        <li>Expose a web portal for displaying collected data about human interaction with touch gestures that are used for smart devices;</li>
+        <li>The user can contribute to the data gathering by answering all the questions from the form.</li>
+      </ul>
+      <h3>Technical Specifications</h3>
+      <h5>UI</h5>
+      <p>The application's UI is implemented via HTML5, JavaScript and React. It is a static, multi-page application that supports answering the questions and filtering the responses from the form.</p>
+      <p>Additional care was taken when writing the client-side application from the perspective of HTML validity, which was verified using <a href="https://validator.w3.org/">https://validator.w3.org/</a>.</p>
+      <p>The UI being a multi-page application means that it is structured by way of multiple pages:</p>
+      <ul>
+        <li>/: The homepage of the application. Exposes a button that redirects you to the form if its accessed from a tablet web browser and a button that redirects you to the dashboard if its accessed from a desktop web browser;</li>
+        <li>/from: The page for the form application;</li>
+        <li>/dashboard:The page for the dashboard application;</li>
+      </ul>
+      <h5>Backend</h5>
+      <p>The application's Backend is implemented via JavaScript and NodeJS. It uses the ExpressJS package for creating endpoints.</p>
+      <p>The endpoints that are called from the UI:</p>
+      <ul>
+        <li>/save: Is a post request that will query the database for saving the data from the form;</li>
+        <li>/find: Is a get request that will query the database for collecting the results form the form;</li>
+      </ul>
+    </section>
+
+    <section id="principles">
+      <h2>Linked Data Principles Adherence</h2>
+      <p>The used protocol for the application's APIs is HTTPS.</p>
+      <p>The payload between the backend services and the client will conform to the JSON format. This approach was chosen to leverage existing capabilities of JavaScript (which the client-side application is written in) in parsing JSON in the browser.</p>
+      <p>It is a REST API, that has get and post requests.</p>
+    </section>
+
+    <section id="schema">
+      <h2>Using Schema.org vocabulary</h2>
+      <p>The data is partially described using the <a href="https://schema.org/">Schema.org</a> vocabulary. The reason for gravitating towards this particular vocabulary and not another will be discussed below.</p>
+      <p>For HCI Assistant, an application whose purpose is to have a Dashboard and a Form with questions. The types <a href="https://schema.org/Question">Question</a>, <a href="https://schema.org/Thing">Thing</a>, <a href="https://schema.org/Audience">Audience</a> from the <a href="https://schema.org/">Schema.org</a> vocabulary fits very well for the requirements for the Form and <a href="https://schema.org/Question">Question</a> for the Dashboard side.</p>
+      <img src="../../images/tech/image2.png" style="width: 75%;"/>
+      <img src="../../images/tech/image1.png" style="width: 75%;"/>
+    </section>
+
+    <section id="challenges">
+      <h2>Challenges and Solutions During the Development Process</h2>
+      <p>In this section, there are described the challenges that were encountered during the development process and how they were solved.</p>
+      <h3>Tablet/phone emulations</h3>
+      <p>For scrolling we used gifs not videos for having a faster upload. Also we had to be really careful with the event listener so we can get the information that we needed and at the same time we can block an action that we did not want the user to make (example: only double tap not pinch & spread).</p>
+    </section>
+
+    <section id="bibliography">
+      <h2>Bibliography</h2>
+      <h3>Technical</h3>
+      <ul>
+        <li><a href="https://profs.info.uaic.ro/~busaco/teach/courses/wade/web-film.html">WADe course</a>, by Sabin Corneliu Buraga ;</li>
+        <li><a href="https://schema.org/">Schema.org;</a></li>
+        <li><a href="https://reactjs.org/docs/getting-started.html">React;</a></li>
+        <li><a href="https://expressjs.com">ExpressJS;</a></li>
+        <li><a href="https://docs.cyclic.sh">Cyclic;</a></li>
+      </ul>
+
+      <h3>Informations & ideas</h3>
+      <ul>
+        <li><a href="https://www.lifewire.com/android-gestures-phone-or-tablet-1616916">https://www.lifewire.com/android-gestures-phone-or-tablet-1616916</a></li>
+        <li><a href="https://thenextweb.com/news/how-to-implement-gestures-into-your-mobile-design">https://thenextweb.com/news/how-to-implement-gestures-into-your-mobile-design</a></li>
+        <li><a href="https://www.justinmind.com/blog/tap-or-swipe-mobile-gestures-which-one-should-you-design-with/">https://www.justinmind.com/blog/tap-or-swipe-mobile-gestures-which-one-should-you-design-with/</a></li>
+        <li><a href="https://blog.prototypr.io/did-you-pick-the-best-in-app-gestures-for-your-app-cab7c7e59288">https://blog.prototypr.io/did-you-pick-the-best-in-app-gestures-for-your-app-cab7c7e59288</a></li>
+        <li><a href="https://www.forbes.com/sites/johnkoetsier/2022/03/23/top-apps-of-2022-by-installs-spend-and-active-users-report/?sh=1af39096d3ac">https://www.forbes.com/sites/johnkoetsier/2022/03/23/top-apps-of-2022-by-installs-spend-and-active-users-report/?sh=1af39096d3ac</a></li>
+        <li><a href="https://www.visualcapitalist.com/top-downloaded-apps-2022/">https://www.visualcapitalist.com/top-downloaded-apps-2022/</a></li>
+        <li><a href="https://www.searchenginejournal.com/tiktok-most-downloaded-app-in-q1-2022/447790/">https://www.searchenginejournal.com/tiktok-most-downloaded-app-in-q1-2022/447790/</a></li>
+      </ul>
+    </section>
+	
+	 <!-- <section id="use-cases" role="doc-use-cases">
+      <h2>Use Cases</h2>
+      <p>
+        The use cases that are covered in our application are the ones presented in the following use case diagram:
+      </p>
+	  <figure typeof="sa:image">
+		<img src="images/UseCase.jpg" alt="Use case diagram" style="max-width: 100%">
+	  </figure>
+	  <p>
+	  The users that want to complete the survey need to provide a valid(not used before in this survey and a real existing one) email address and after that follow all the stepts until the completion of the survey.
+	  The admin/researcher has to login into the app with email and password. After the authentification the user will have the chance to access all the resulted data from the survey and filter it in different ways on interested HCI-oriented.
+	  </p>
+	  <p>
+	  In the following sections, we will present more details regarding the implementation of the proposed solution.
+	  </p>
+    </section>
+	
+	
+    <section id="internal-data-structures">
+      <h2>Internal data structures</h2>
+      <p>
+        The resources that will be used inside the Web application are: 
+      </p>
+      <ol>
+        <li>
+          Users - at the root of the application,there are the application users. They do not have credentials and other user informations about them because they will not have an account,
+          an application user will have associated the email that provided to enter the application and the responses.
+        </li>
+       <li>
+        Admin/Rsearcher - a user that needs to see the results of the survey, filter them and analise them to get the right details. 
+       </li>
+       
+      </ol>
+      <p>The Admin/Researcher will have the option of filtering the results of the survey with the next options:</p>
+      <ol>
+        <li>
+          Prefered gesture - depending on the amount of time that the user spent on a specific gesture, his other responses and the precentages generated depending on the marks that will be given.
+        </li>
+        <li>
+          Persona - depending on different types of personas, ages, sexes, user caracteristis.
+        </li>
+        <li>
+          Medium - on the type of devise that the gesture took place and the most used medium/device.
+        </li>
+      </ol>
+      <p>
+        
+    </section>
+    <p>
+      The resources presented previously will be accessible through the REST API, by making a GET request to the website’s
+      endpoint /{resourceName}/{resourceIdentifier}. Before fetching the resource, the server will first check if the user has the
+      necessary permissions to access that specific request. The responses of the REST API will always be JSON-LD objects, so that we
+      can query the data using SPARQL queries. Each API call made by the front-end application will be authenticated using an
+      authorization token that will also be used to determine if the requester has the necessary rights to perform that
+      operation.
+    </p>
+  
+  <section id="linked-data-principles">
+    <h2>Linked Data Principles</h2>
+    <p>
+      This application adheres to the linked data principles as each resource has a unique HTTP URI (represented by the REST
+      API endpoint /{resourceType}/{resourceIdentifier}, which returns relevant information about that resource in the JSON-LD
+      format, containing data for discovering other linked resources. The WoT specifications of the objects will be stored as
+      they are, and we will use them as inspiration for representing the other resources. The front-end of the application
+      will also use the information inside the JSON-LD objects obtained from the API to associate HTML5 micro-data to the
+      content displayed in the web pages.
+    </p>
+  </section>
+  
+  
+  <section id="data-storage">
+    <h2>Data Storage</h2>
+    <p>
+      The data will be stored using a relational database because the the information is well structured in a relational database
+      and the data used by the application has a fixed schema and also, each entity is well defined as a table with multiple fixed columns.
+      Moreover, we will use a framework which offers RDF API, which enables us to easily work with resources
+      inside the model and perform various SPARQL queries on the data.
+    </p>
+    <p>
+    	  
+	  Each responded survey will be linked with the email address added in the start from the user. Each response on some question will be connected with a set of marks for each one of the responses.
+	  It is really important for that the data are stored easy, fast and clear, this way opens the possibility for faster responses and why not a future ML implementation.
+	  
+    </p>
+    <p>
+      
+	  The most important interrogations that will be used inside the application are going to be the ones that will calculate precentages and averages for the data for each user.
+	  These are going to be really important because the research dependes on the accuracy of the results. The results of the queries will also be parsed in the back-end so the REST API will return the responses structured in a way that will require less processing on the front-end side.
+	  All this data will be easy to download as a csv file that is going to be really easy to read taking into account the clear and clean way of selecting and arranging the data in the database.
+    </p>
+  </section>
+  <section id="bibliography" role="doc-bibliography">
+    <h2>Bibliography</h2>
+    <ol>
+      <li typeof="schema:WebPage" role="doc-biblioentry"
+          resource="https://profs.info.uaic.ro/~busaco/teach/courses/wade/web-film.html"
+          property="schema:citation" id="wade-course">
+        <cite property="schema:name">
+          <a href="https://profs.info.uaic.ro/~busaco/teach/courses/wade/web-film.html">WADe course</a>
+        </cite>
+                
+      </li>
+      <li typeof="schema:WebPage" role="doc-biblioentry"
+          resource="https://restfulapi.net/"
+          property="schema:citation" id="restful-api-website">
+        <cite property="schema:name">
+          <a href="https://restfulapi.net/">Restful API website</a>
+        </cite> 
+        
+      </li>
+      
+      <li typeof="schema:WebPage" role="doc-biblioentry"
+          resource="https://www.mysql.com/"
+          property="schema:citation" id="MYSQL-db">
+        <cite property="schema:name">
+          <a href="https://www.mysql.com/">MySQL</a>
+        </cite>
+        
+      </li>
+    </ol>
+  </section> -->
+  </body>
+</html>
