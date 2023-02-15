@@ -22,8 +22,8 @@ const Home = () => {
           <Link className='buttonLink w-25 pa4' to="/dashboard">Dashboard</Link>
         </BrowserView>
         <BrowserView>
-          {/* <a href='wiki.html'>Wiki</a> */}
-          <Link className='buttonLink w-25 pa4' to="/wiki">Wiki</Link>
+          <a href='wiki.html' className='buttonLink w-25 pa4'>Wiki</a>
+          {/* <Link className='buttonLink w-25 pa4' to="/wiki">Wiki</Link> */}
         </BrowserView>
       </div>
     );

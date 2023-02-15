@@ -9,7 +9,7 @@ const Wiki = () => {
                 </p>
                 <ul>
                     <li><a href="Scholarly HTML/Technical Report/index.html">Technical Report</a></li>
-                    <li><a href="/user-guide">User Guide</a></li>
+                    <li><a href="user-guide.html">User Guide</a></li>
                     <li><a href="https://drive.google.com/file/d/1451wiuzLkK7EgdIM3fNek_RKAZ33YNu0/view?usp=share_link">Video demonstration for dashboard</a></li>
                     <li><a href="https://drive.google.com/file/d/1_Cv81O4xNS1bhKBO_7UaxeTmAVULMKuq/view?usp=share_link">Video demonstration for form</a></li>
                     <li><a href="/">Application (use a tablet to access the form or use a PC to access the dashboard)</a></li>
